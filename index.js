@@ -76,6 +76,13 @@ add.addEventListener('click',function(){
     pos=exp.length-1;
     screen.textContent=exp;
     }
+    else{
+        var s=exp.substring(0,exp.length-1);
+        exp=s+"+";
+        prev="+";
+        pos=exp.length-1;
+        screen.textContent=exp;
+    }
 });
 sub.addEventListener('click',function(){
     if(exp[exp.length-1]!=="+" && exp[exp.length-1]!=="-" && exp[exp.length-1]!=="*" && exp[exp.length-1]!=="/" && exp[exp.length-1]!=="%")
@@ -84,6 +91,13 @@ sub.addEventListener('click',function(){
     prev="+";
     pos=exp.length-1;
     screen.textContent=exp;
+    }
+    else{
+        var s=exp.substring(0,exp.length-1);
+        exp=s+"-";
+        prev="-";
+        pos=exp.length-1;
+        screen.textContent=exp;
     }
 });
 mul.addEventListener('click',function(){
@@ -94,6 +108,13 @@ mul.addEventListener('click',function(){
     pos=exp.length-1;
     screen.textContent=exp;
     }
+    else{
+        var s=exp.substring(0,exp.length-1);
+        exp=s+"*";
+        prev="*";
+        pos=exp.length-1;
+        screen.textContent=exp;
+    }
 });
 divide.addEventListener('click',function(){
     if(exp[exp.length-1]!=="+" && exp[exp.length-1]!=="-" && exp[exp.length-1]!=="*" && exp[exp.length-1]!=="/" && exp[exp.length-1]!=="%")
@@ -103,6 +124,13 @@ divide.addEventListener('click',function(){
     pos=exp.length-1;
     screen.textContent=exp;
     }
+    else{
+        var s=exp.substring(0,exp.length-1);
+        exp=s+"/";
+        prev="/";
+        pos=exp.length-1;
+        screen.textContent=exp;
+    }
 });
 rem.addEventListener('click',function(){
     if(exp[exp.length-1]!=="+" && exp[exp.length-1]!=="-" && exp[exp.length-1]!=="*" && exp[exp.length-1]!=="/" && exp[exp.length-1]!=="%")
@@ -111,6 +139,13 @@ rem.addEventListener('click',function(){
     prev="%";
     pos=exp.length-1;
     screen.textContent=exp;
+    }
+    else{
+        var s=exp.substring(0,exp.length-1);
+        exp=s+"%";
+        prev="%";
+        pos=exp.length-1;
+        screen.textContent=exp;
     }
 });
 dot.addEventListener('click',function(){
@@ -175,7 +210,7 @@ sign.addEventListener('click',function(){
 result.addEventListener('click',function(){
     var sum=eval(exp);
     screen.textContent=sum;
-    exp="";
+    exp=sum;
     prev="";
     pos=0;
 });
